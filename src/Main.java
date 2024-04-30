@@ -11,7 +11,7 @@ public class Main {
             playerOne.inputReady();
         }
 
-        System.out.println("I am the system, I generated a number from 1 to 100. If you guess it, you will win.") //+ "\n" + "But if you don't guess it, it will be Ducky Debuggie's turn to guess, until one of you wins." + "\n" + "Don´t Worry, I'll give you hints along the way.");
+        System.out.println("I am the system, I generated a number from 1 to 100. If you guess it, you will win."); //+ "\n" + "But if you don't guess it, it will be Ducky Debuggie's turn to guess, until one of you wins." + "\n" + "Don´t Worry, I'll give you hints along the way.");
 
         GuessTheNumber play = new GuessTheNumber();
         int targetNumber = play.getTargetNumber();
