@@ -1,8 +1,7 @@
 import java.util.Random;
 
 public class GuessTheNumber {
-    public boolean checkGuess;
-    private int targetNumber;
+    private final int targetNumber;
 
     public GuessTheNumber() {
         Random random = new Random();

@@ -13,9 +13,37 @@ public class PlayerOne extends Player {
 
     public void inputReady( ) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Are you ready?");
-        setReady(scanner.nextLine());
+        String answer = "";
+        boolean validAnswer = false;
+
+        while (!validAnswer) {
+            System.out.println("Are you ready? (yes/no)");
+            answer = scanner.nextLine().toLowerCase();
+            if (answer.equals("yes")) {
+                validAnswer = true;
+            } if (answer.equals("no")) {
+                System.out.println("Enter yes when you are ready");
+            }
+        }
         System.out.println("Perfect! Let´s start");
+    }
+
+    @Override
+    public String chooseOption() {
+        Scanner scanner = new Scanner(System.in);
+        String option= "";
+        boolean validOption = false;
+
+        while (!validOption) {
+            System.out.println("Choose your option: rock, paper, or scissors");
+            option = scanner.nextLine().toLowerCase();
+            if (option.equals("rock")||option.equals("paper")||option.equals("scissors")) {
+                validOption=true;
+            } else {
+                System.out.println("Enter a valid option");
+            }
+        }
+        return option;
     }
 
     @Override
@@ -49,8 +77,4 @@ public class PlayerOne extends Player {
         makeGuess(guess);
     }
 
-
-    public int getGuess() {
-        return guesses[guesses.length - 1];
-    }
 }
