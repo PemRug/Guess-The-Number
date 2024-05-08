@@ -1,13 +1,15 @@
+import java.util.ArrayList;
+
 public abstract class Player {
     private String name;
-    protected static int[] guesses;
+    protected static ArrayList<Integer> guesses;
 
 
     public Player(String name) {
         this.name = name;
-        guesses = new int[20];
-
+        guesses = new ArrayList<>();
     }
+
 
     String getName() {
         return name;
@@ -20,11 +22,9 @@ public abstract class Player {
 
 
     public int getGuess() {
-        for (int i = guesses.length -1; i>= 0; i--) {
-            if(guesses[i] != 0) {
-                return guesses[i];
+        if (!guesses.isEmpty()) {
+            return guesses.getLast();
             }
-        }
         return 101;
     }
 

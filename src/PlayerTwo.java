@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Random;
 
 
@@ -14,22 +15,27 @@ public class PlayerTwo extends Player {
 
     @Override
     public void makeGuess(int guess) {
-        int index = -1;
-        for (int i=0; i<guesses.length; i++) {
-            if(guesses[i] == 0) {
-                index = i;
-                break;
-            }
-        }
-        if (index != -1) {
-            guesses[index] = guess;
+        if (guesses.size() < 100) {
+            guesses.add(guess);
         }
     }
 
     public int getGuess() {
         int guess = 0;
+        GuessTheNumber guessGame = new GuessTheNumber();
         Random random = new Random();
-        guess = random.nextInt(100) + 1;
+        if (!guesses.isEmpty()) {
+            int lastGuess = Collections.max(guesses);
+            if (guess < guessGame.getTargetNumber()) {
+                guess = random.nextInt(lastGuess -1) + 1;
+            } else {
+                guess = random.nextInt(100 -lastGuess)+ lastGuess+ 1;
+            }
+        } else  {
+            guess = random.nextInt(100) + 1;
+
+        }
+        guesses.add((guess));
         System.out.println(guess);
         return guess;
     }

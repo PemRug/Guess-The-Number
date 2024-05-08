@@ -48,15 +48,8 @@ public class PlayerOne extends Player {
 
     @Override
     public void makeGuess(int guess) {
-        int index = -1;
-        for (int i=0; i<guesses.length; i++) {
-            if(guesses[i] == 0) {
-                index = i;
-                break;
-            }
-        }
-        if (index != -1) {
-            guesses[index] = guess;
+        if (guesses.size() < 100) {
+            guesses.add(guess);
         }
     }
 
