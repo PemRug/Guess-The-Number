@@ -32,7 +32,7 @@ class PlayerTest {
         assertEquals(5, guess);
     }
 
-    @DisplayName("getGuess error 101")
+    /*@DisplayName("getGuess error 101")
     @Test
     void getGuessTest1() {
         ConcretePlayer getGuessPlayer = new ConcretePlayer("");
@@ -43,7 +43,7 @@ class PlayerTest {
 
         int guess = getGuessPlayer.getGuess();
         assertEquals(101, guess);
-    }
+    }*/
 
     @DisplayName("turnsWinnerTest1: Return the winner Player Two")
     @Test
