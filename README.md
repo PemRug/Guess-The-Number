@@ -27,8 +27,8 @@ Si encuentras algún error o tienes alguna mejora que sugerir, no dudes en abrir
 
 ## Quieres conocer el proceso?
 1. Estudio de Java, especialmente classes y arrays.
-2. Diagrama de classes en la imagen en este link:
-2. Pruebas de como funciona Java en Demo en este link:
+2. Diagrama de classes en la imagen en este link: https://raw.githubusercontent.com/PemRug/Guess-The-Number/test/GuessTheNumberGame%20Diagram.drawio.png
+2. Pruebas de como funciona Java
 3. Se inicio generando la estructura fijada en el Diagrama de classes de las classes:
    GuessTheNumber, Player y PlayerOne, y realizar la funcionalidad en Main.
 4. Luego se agrego Player Two.
