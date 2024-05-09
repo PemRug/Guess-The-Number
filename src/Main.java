@@ -8,8 +8,9 @@ public class Main {
             PlayerTwo playerTwo = new PlayerTwo("Ducky Debuggie");
             String winnerName = "NoOne";
             String winner = "";
+            String tie = "Tie";
 
-            while (winner.isEmpty() || winner.equals("Tie")) {
+            while (winner.isEmpty() || winner.equals(tie)) {
                 if (!playerOne.getName().isEmpty()) {
                     System.out.println("Welcome " + playerOne.getName() + "! My name is: " + playerTwo);
                     String playerOneOption = playerOne.chooseOption();
@@ -17,19 +18,19 @@ public class Main {
                     winner = Player.turnsWinner(playerOneOption, playerTwoOption);
 
 
-                    if (winner.equals("Tie")) {
-                        System.out.println("It's a tie!");
+                    if (winner.equals(tie)) {
+                        System.out.println("It's a " + tie + " !");
                     } else if (winner.equals("Player One")) {
                         System.out.println(playerOne.getName() + " wins!");
                         winnerName= playerOne.getName();
                     } else {
-                        System.out.println(playerTwo + " wins!");
+                        System.out.println(playerTwo + " wins!" + "\n");
                         winnerName= String.valueOf(playerTwo);
                     }
                 }
             }
 
-        System.out.println("I am the system, I generated a number from 1 to 100. If you guess it, you will win." + "\n" + "But if you don't guess it, it will be Ducky Debuggie's turn to guess, until one of you wins." + "\n" + "Don´t Worry, I'll give you hints along the way.");
+        System.out.println("I am the system, I generated a number from 1 to 100. If you guess it, you will win." + "\n" + "But if you don't guess it, it will be Ducky Debuggie's turn to guess, until one of you wins." + "\n" + "\n" + "Don´t Worry, I'll give you hints along the way.");
         playerOne.inputReady();
         Player currentPlayer = (winnerName.equals(playerOne.getName())) ? playerOne : playerTwo;
         
@@ -52,9 +53,13 @@ public class Main {
 
             if (!isCorrectGuess) {
                 if (targetNumber > currentGuess) {
+                    System.out.print("\033[36m");
                     System.out.println("Try again, must be a higher number");
+                    System.out.print("\033[0m");
                 } else if (targetNumber < currentGuess) {
+                    System.out.print("\033[33m");
                     System.out.println("Try again, it should be a lower number");
+                    System.out.print("\033[0m");
                 }
             }
            currentPlayer = (currentPlayer == playerOne) ? playerTwo: playerOne;

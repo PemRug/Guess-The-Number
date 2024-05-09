@@ -1,10 +1,11 @@
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class PlayerOneTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void inputNameTest() {
         String input = "Jane Doe";
         InputStream in = new ByteArrayInputStream(input.getBytes());
@@ -15,7 +16,7 @@ class PlayerOneTest {
         assertEquals("Jane Doe", player.getName());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void inputReady() {
         String answer = "yes";
         InputStream in = new ByteArrayInputStream(answer.getBytes());
@@ -26,7 +27,7 @@ class PlayerOneTest {
         assertTrue(true);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void chooseOptionRock() {
     String option = "rock";
     InputStream in = new ByteArrayInputStream (option.getBytes());
@@ -36,7 +37,7 @@ class PlayerOneTest {
     assertEquals("rock", optionRock);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void chooseOptionPaper() {
         String option = "paper";
         InputStream in = new ByteArrayInputStream (option.getBytes());
@@ -46,7 +47,7 @@ class PlayerOneTest {
         assertEquals("paper", optionPaper);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void chooseOptionScissors() {
         String option = "scissors";
         InputStream in = new ByteArrayInputStream (option.getBytes());

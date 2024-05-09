@@ -2,8 +2,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-class ConcretePlayer extends Player {
-    public ConcretePlayer(String name) {
+class PlayerTest extends Player {
+
+    public PlayerTest(String name) {
         super(name);
     }
 
@@ -14,15 +15,12 @@ class ConcretePlayer extends Player {
 
     @Override
     public void makeGuess(int guess) {
-    }
-}
-
-class PlayerTest {
-
+    } 
+    
     @DisplayName("getGuessTest: Return the guess in the actual position")
     @Test
     void getGuessTest() {
-        ConcretePlayer getGuessPlayer = new ConcretePlayer("");
+        PlayerTest getGuessPlayer = new PlayerTest("");
         PlayerOne player = new PlayerOne("");
         player.makeGuess(10);
         player.makeGuess(3);
@@ -35,7 +33,7 @@ class PlayerTest {
     /*@DisplayName("getGuess error 101")
     @Test
     void getGuessTest1() {
-        ConcretePlayer getGuessPlayer = new ConcretePlayer("");
+        PlayerTest getGuessPlayer = new PlayerTest("");
         PlayerOne player = new PlayerOne("");
         player.makeGuess(0);
         player.makeGuess(0);
@@ -105,7 +103,7 @@ class PlayerTest {
     @DisplayName("getNameTest")
     void getNameTest() {
         String playerName = "Jane Doe";
-        ConcretePlayer player = new ConcretePlayer(playerName);
+        PlayerTest player = new PlayerTest(playerName);
         String name = player.getName();
         assertEquals(playerName, name);
     }
@@ -113,7 +111,7 @@ class PlayerTest {
     @DisplayName("setNameTest: Set the name of the player")
     @Test
     void setNameTest() {
-        ConcretePlayer player = new ConcretePlayer("");
+        PlayerTest player = new PlayerTest("");
         String newName = "Jane Doe";
         player.setName(newName);
         String name = player.getName();

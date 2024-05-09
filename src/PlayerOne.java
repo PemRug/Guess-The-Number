@@ -17,7 +17,9 @@ public class PlayerOne extends Player {
         boolean validAnswer = false;
 
         while (!validAnswer) {
+            System.out.print("\033[33m");
             System.out.println("Are you ready? (yes/no)");
+            System.out.print("\033[0m");
             answer = scanner.nextLine().toLowerCase();
             if (answer.equals("yes")) {
                 validAnswer = true;
